@@ -178,13 +178,22 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
-		return null;
+		ArrayList<Student> al=new ArrayList<Student>(); 
+		for(Student s:this.students)
+		{
+			if((s.getBirthDate()).equals(date)){al.add(s);}
+		}
+		return students=al.toArray(new Student[al.size()]);
 	}
 
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
-		return null;
+		ArrayList<Student> al=new ArrayList<Student>();
+		for(Student s:this.students){
+			if(s.getBirthDate().after(firstDate) && s.getBirthDate().before(lastDate)){al.add(s);}
+		}
+		return students=al.toArray(new Student[al.size()]);
 	}
 
 	@Override
